@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 7
+names: ['Address', 'Signature', 'check_box', 'date', 'email', 'free_text', 'number']
+
+roboflow:
+  workspace: ml-bench-data-annotation-task
+  project: data-annotation-ml-bench
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/ml-bench-data-annotation-task/data-annotation-ml-bench/dataset/1
