@@ -35,7 +35,8 @@ def find_student():
             print("Age:",s["Age"])
             print("Course:",s["Course"])
             return s
-    return "No student record found with Roll Number:",roll_number
+    print("No student record found with Roll Number:",roll_number)
+    return None
 
 def  update_student():
     found_student=find_student()
