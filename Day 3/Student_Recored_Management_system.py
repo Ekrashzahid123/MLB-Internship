@@ -35,7 +35,7 @@ def find_student():
             print("Age:",s["Age"])
             print("Course:",s["Course"])
             return s
-    return None
+    return "No student record found with Roll Number:",roll_number
 
 def  update_student():
     found_student=find_student()
@@ -48,3 +48,39 @@ def  update_student():
         print("Student record updated successfully.")
     else:
         print("No student record found to update.")
+
+def delete_student():
+    found_student=find_student()
+    if found_student:
+        student.remove(found_student)
+        print("Student record deleted successfully.")
+    else:
+        print("No student record found to delete.")
+def menu():
+    while True:
+        print("\nStudent Management System")
+        print("1. Add Student")
+        print("2. View All Students")
+        print("3. Find Student")
+        print("4. Update Student")
+        print("5. Delete Student")
+        print("6. Exit")
+        choice=input("Enter your choice 1 to 6:")
+        if choice=="1":
+            add_student()
+        elif choice=="2":
+            view_student()
+        elif choice=="3":
+            find_student()
+        elif choice=="4":
+            update_student()
+        elif choice=="5":
+            delete_student()
+        elif choice=="6":
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 6.")
+
+if __name__=="__main__":
+    menu()
