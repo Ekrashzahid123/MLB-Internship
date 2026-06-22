@@ -1,4 +1,5 @@
 student=[]
+#-----------------------------------------------------------------------#
 def add_student():
     data={
         "name":input("Enter the name of student:"),
@@ -9,7 +10,7 @@ def add_student():
     }
     student.append(data)
     print("Student added Successfully")
-
+#-----------------------------------------------------------------------#
 def view_student():
 
     if len(student)==0:
@@ -23,7 +24,7 @@ def view_student():
             print("Age:",s["Age"])
             print("Course:",s["Course"])
     print("Total number of students:",len(student))
-
+#-------------------------------------------------------------------------#
 def find_student():
     roll_number=input("Enter the Roll number of student to find:")
     for s in student:
@@ -37,10 +38,10 @@ def find_student():
             return s
     print("No student record found with Roll Number:",roll_number)
     return None
-
+#---------------------------------------------------------------------------#
 def  update_student():
     found_student=find_student()
-    if found_student:
+    if found_student is not None:
         print("Enter new details for the student:")
         found_student["name"]=input("Enter the name of student:")
         found_student["Roll Number"]=input("Enter the Roll Number of student:")
@@ -49,14 +50,15 @@ def  update_student():
         print("Student record updated successfully.")
     else:
         print("No student record found to update.")
-
+#----------------------------------------------------------------------------#
 def delete_student():
     found_student=find_student()
-    if found_student:
+    if found_student is not None:
         student.remove(found_student)
         print("Student record deleted successfully.")
     else:
         print("No student record found to delete.")
+#----------------------------------------------------------------------------#
 def menu():
     while True:
         print("\nStudent Management System")
@@ -83,5 +85,5 @@ def menu():
         else:
             print("Invalid choice. Please enter a number between 1 and 6.")
 
-if __name__=="__main__":
+
     menu()
